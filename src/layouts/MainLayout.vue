@@ -14,6 +14,7 @@ import AppDrawer from "components/AppDrawer.vue";
 import AppHeader from "components/AppHeader.vue";
 
 const leftDrawerOpen = ref(true);
+
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;
 }

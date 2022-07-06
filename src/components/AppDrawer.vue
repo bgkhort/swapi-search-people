@@ -61,12 +61,12 @@ const isEmptyPeopleWithFilters = computed(() => {
 
 watch(
   [filterFilms, filterPlanets, filterSpecies],
-  ([newFilterFilms, newFilterPlanets, newFilterSpecies]) => {
+  async ([newFilterFilms, newFilterPlanets, newFilterSpecies]) => {
     if (filterStore.isEmptyFilters && peopleStore.isEmptyPeople) {
       peopleStore.setCurrentPage(1);
-      peopleStore.getPeopleByPage(peopleStore.currentPage);
+      await peopleStore.getPeopleByPage(peopleStore.currentPage);
     } else {
-      peopleStore.getPeopleByFilters();
+      await peopleStore.getPeopleByFilters();
       filterStore.setFilteredFilterField();
     }
     if (
@@ -76,7 +76,7 @@ watch(
     ) {
       setFilterFieldTitle();
       peopleStore.setCurrentPage(1);
-      peopleStore.getPeopleByPage(peopleStore.currentPage);
+      await peopleStore.getPeopleByPage(peopleStore.currentPage);
     }
   },
   { deep: true }
@@ -84,7 +84,7 @@ watch(
 
 onMounted(async () => {
   if (isEmptyPeopleWithFilters.value) {
-    peopleStore.getPeopleByFilters();
+    await peopleStore.getPeopleByFilters();
   }
   if (filterStore.isEmptyFilterFields) {
     await getFilterField();

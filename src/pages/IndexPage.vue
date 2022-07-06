@@ -24,9 +24,9 @@ const filterStore = useFiltersStore();
 
 const { currentPage } = storeToRefs(peopleStore);
 
-onMounted(() => {
+onMounted(async () => {
   if (peopleStore.isEmptyPeople && filterStore.isEmptyFilters) {
-    peopleStore.getPeopleByPage(currentPage.value);
+    await peopleStore.getPeopleByPage(currentPage.value);
   }
 });
 
