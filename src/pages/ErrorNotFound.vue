@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
+    class="fullscreen bg-blue-grey-10 text-white text-center q-pa-md flex flex-center"
   >
     <div>
       <div style="font-size: 30vh">404</div>
@@ -10,7 +10,7 @@
       <q-btn
         class="q-mt-xl"
         color="white"
-        text-color="blue"
+        text-color="blue-grey-10"
         unelevated
         to="/"
         label="Go Home"
@@ -20,10 +20,4 @@
   </div>
 </template>
 
-<script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "ErrorNotFound",
-});
-</script>
+<script setup></script>

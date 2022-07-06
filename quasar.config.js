@@ -9,8 +9,6 @@ module.exports = configure(function () {
       errors: true,
     },
 
-    css: ["_global.scss"],
-
     extras: ["roboto-font", "material-icons"],
 
     build: {
@@ -24,15 +22,6 @@ module.exports = configure(function () {
 
     devServer: {
       open: true,
-    },
-
-    framework: {
-      config: {},
-
-      iconSet: "material-icons", // Quasar icon set
-      lang: "en-US", // Quasar language pack
-
-      plugins: [],
     },
 
     animations: [],
